@@ -1,5 +1,7 @@
 'use strict';
 
+process.env["NTBA_FIX_319"] = 1;
+
 const express = require("express");
 const bodyParser = require("body-parser");
 const session = require("express-session");
