@@ -1,3 +1,5 @@
+'use strict';
+
 const apiAi = require("apiai");
 const botClient = apiAi("f56eb6f2557540158b57f6d08cf37e41");
 
