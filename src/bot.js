@@ -1,8 +1,7 @@
 const apiAi = require("apiai");
-
 const botClient = apiAi("f56eb6f2557540158b57f6d08cf37e41");
 
-module.exports =  (req, res, next) => {
+const middleware = (req, res, next) => {
     const question = req.body.question;
     if (!question) {
         next(new Error("Field `question` is required"));
@@ -33,3 +32,8 @@ function sendRequest(text, sessionId, res, next) {
     });
     botRq.end();
 }
+
+
+module.exports = (app) => {
+    app.post('/bot', middleware);
+};
